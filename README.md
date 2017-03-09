@@ -1,8 +1,8 @@
-Openspace Employee Status / SAPOES
+# Openspace Employee Status / SAPOES
 
 *Switch on a RGB LED following the current user window (e.g. Slack=Green ; SublimeText=Red ; Word=Orange)*
 
-<img src="resources/redlights.png" />
+<img src="resources/status.png" />
 
 ### Install
 
