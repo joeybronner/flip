@@ -1,11 +1,15 @@
 #!/usr/bin/python
-import sched, time, serial
+import sched, time, serial, sys
 from AppKit import NSWorkspace
 
 import time
 
-ser = serial.Serial("COM4",timeout=1)
-print(ser)
+try:
+	ser = serial.Serial("COM4",timeout=1)
+	print(ser)
+except:
+	print "No device found, please connect the device to your USB"
+	sys.exit()
 
 def executeSomething():
 	activeAppName = NSWorkspace.sharedWorkspace().activeApplication()['NSApplicationName']
