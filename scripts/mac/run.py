@@ -11,10 +11,10 @@ except:
 	print "No device found, please connect the device to your USB"
 	sys.exit()
 
-def executeSomething():
+def getCurrentWindow():
 	activeAppName = NSWorkspace.sharedWorkspace().activeApplication()['NSApplicationName']
 	print activeAppName
 	time.sleep(1)
 
 while True:
-	executeSomething()
+	getCurrentWindow()
