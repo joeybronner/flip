@@ -2,8 +2,6 @@
 import sched, time, serial, sys
 from AppKit import NSWorkspace
 
-import time
-
 try:
 	ser = serial.Serial("COM4",timeout=1)
 	print(ser)
