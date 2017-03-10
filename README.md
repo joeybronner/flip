@@ -6,6 +6,16 @@
 
 <img src="resources/status.png" />
 
+### List of applications detected
+
+##### Browser
+ - Google Chrome
+ - Internet Explorer
+
+##### Development IDEs
+ - Notepad++
+ - Arduino IDE
+
 ### Install
 
 #### Windows
@@ -47,3 +57,9 @@ Open a terminal
 #### Linux
 
 *Not supported yet.*
+
+### Useful links
+
+ - http://www.lfd.uci.edu/~gohlke/pythonlibs/#pywin32
+ - https://sourceforge.net/projects/pywin32/files/pywin32/Build216/
+ - http://docs.activestate.com/activepython/3.2/pywin32/win32gui.html
