@@ -18,9 +18,12 @@ logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s',
                     level=logging.DEBUG,
                     stream=sys.stdout)
 
-browsers = ['Internet Explorer', 'Google Chrome']
-ides = ['Notepad++', 'Notepad', '| Arduino']
-design = ['Photoshop']
+win_browsers = ['Internet Explorer', 'Google Chrome']
+win_ides = ['Notepad++', 'Notepad', '| Arduino', 'Android Studio']
+win_design = ['Photoshop']
+win_multimedia = ['Windows Media Player', 'VLC']
+win_work = ['Outlook']
+win_chat = ['Skype', 'Slack']
 
 def get_active_window():
     """

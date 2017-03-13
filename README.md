@@ -8,13 +8,11 @@
 
 ### List of applications detected
 
-##### Browser
- - Google Chrome
- - Internet Explorer
+## Arduino board
 
-##### Development IDEs
- - Notepad++
- - Arduino IDE
+[Installation procedure for Digispark (drivers, arduino ide, etc...)](http://www.instructables.com/id/Digispark-DIY-The-smallest-USB-Arduino/step3/Installing-Digispark-USB-driver/)
+
+## Desktop/Laptop app
 
 ### Install
 

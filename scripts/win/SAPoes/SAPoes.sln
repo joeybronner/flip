@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchDialog", "WatchDialog.csproj", "{789CD5DC-E53B-4399-80BD-BFBC4833E95E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAPoes", "SAPoes.csproj", "{789CD5DC-E53B-4399-80BD-BFBC4833E95E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
