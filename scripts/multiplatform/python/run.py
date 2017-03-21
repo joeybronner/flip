@@ -84,7 +84,7 @@ def get_active_window():
 while True:
     time.sleep(1)
     active = get_active_window()
-    if any(browser in active for browser in browsers):
+    if any(browser in active for browser in win_browsers):
         print("Internet")
     else:
         print("Active window: %s" % str(get_active_window()))
