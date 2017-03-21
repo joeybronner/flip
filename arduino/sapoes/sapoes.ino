@@ -12,21 +12,25 @@ const byte COLOR_WHITE = 0b111;
 const byte PIN_LED_R = 1;
 const byte PIN_LED_G = 2;
 const byte PIN_LED_B = 3;
+const byte PIN_BUT = 0;
+int val = 0;
 
 void setup() {
     // Initialize the LED pins as outputs
     pinMode(PIN_LED_R, OUTPUT);
     pinMode(PIN_LED_G, OUTPUT);
     pinMode(PIN_LED_B, OUTPUT);
+    pinMode(PIN_BUT, INPUT);
+    displayColor(COLOR_BLACK);
 }
  
 void loop() {
-    displayColor(COLOR_GREEN);
-    delay(2000);
-    displayColor(COLOR_RED);
-    delay(2000);
-    displayColor(COLOR_YELLOW);
-    delay(2000);
+    val = digitalRead(PIN_BUT);
+    if (val == HIGH) {
+        displayColor(COLOR_GREEN);
+    } else {
+        displayColor(COLOR_RED);
+    }
 }
 
 void displayColor(byte color) {
