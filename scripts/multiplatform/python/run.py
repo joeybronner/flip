@@ -6,6 +6,20 @@ import logging
 import sys
 import time
 import serial
+import serial.tools.list_ports
+import requests
+import win32com.client
+import usb
+
+wmi = win32com.client.GetObject ("winmgmts:")
+for usb in wmi.InstancesOf ("Win32_USBHub"):
+    print usb.DeviceID
+
+print "Looking for plugged devices"
+ports = list(serial.tools.list_ports.comports())
+for p in ports:
+    print p
+print "-------------------"
 
 #try:
 #    ser = serial.Serial("COM4",timeout=1)
