@@ -23,25 +23,40 @@ void setup() {
     pinMode(PIN_LED_B, OUTPUT);
     pinMode(PIN_BUT, INPUT);
     displayColor(COLOR_WHITE);
+    delay(500);
+    displayColor(COLOR_BLUE);
+    delay(500);
+    displayColor(COLOR_MAGENTA);
+    delay(500);
+    displayColor(COLOR_CYAN);
+    delay(500);
+    displayColor(COLOR_YELLOW);
+    delay(500);
+    displayColor(COLOR_RED);
+    delay(500);
+    displayColor(COLOR_WHITE);
+    delay(500);
+    displayColor(COLOR_BLACK);
+    
     Serial.begin(9600);
 }
  
 void loop() {
-    if (Serial.available() > 0) { incomingByte = Serial.read(); }
- 
-  if (incomingByte == 'g') {
-      displayColor(COLOR_GREEN);
-  } else if (incomingByte == 'r') {
-      displayColor(COLOR_RED);
-  } else if (incomingByte == 'y') {
-      displayColor(COLOR_YELLOW);
-  } else {
-      Serial.write("Incoming byte : " + incomingByte);
-  }
+    if (Serial.available() > 0) {
+        incomingByte = Serial.read();
+        if (incomingByte == 'g') {
+            displayColor(COLOR_GREEN);
+        } else if (incomingByte == 'r') {
+            displayColor(COLOR_RED);
+        } else if (incomingByte == 'y') {
+            displayColor(COLOR_YELLOW);
+        } else {
+            Serial.write("Incoming byte : " + incomingByte);
+        }
+    }
 }
 
 void displayColor(byte color) {
-
   // Version anode commune
   digitalWrite(PIN_LED_R, !bitRead(color, 2));
   digitalWrite(PIN_LED_G, !bitRead(color, 1));
