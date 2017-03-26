@@ -9,11 +9,12 @@ const byte COLOR_YELLOW = 0b110;
 const byte COLOR_WHITE = 0b111;
 
 /* Broches */
-const byte PIN_LED_R = 1;
-const byte PIN_LED_G = 2;
-const byte PIN_LED_B = 3;
-const byte PIN_BUT = 0;
+const byte PIN_LED_R = 9;
+const byte PIN_LED_G = 10;
+const byte PIN_LED_B = 11;
+const byte PIN_BUT = 5;
 int val = 0;
+int incomingByte = 0;
 
 void setup() {
     // Initialize the LED pins as outputs
@@ -21,16 +22,22 @@ void setup() {
     pinMode(PIN_LED_G, OUTPUT);
     pinMode(PIN_LED_B, OUTPUT);
     pinMode(PIN_BUT, INPUT);
-    displayColor(COLOR_BLACK);
+    displayColor(COLOR_WHITE);
+    Serial.begin(9600);
 }
  
 void loop() {
-    val = digitalRead(PIN_BUT);
-    if (val == HIGH) {
-        displayColor(COLOR_GREEN);
-    } else {
-        displayColor(COLOR_RED);
-    }
+    if (Serial.available() > 0) { incomingByte = Serial.read(); }
+ 
+  if (incomingByte == 'g') {
+      displayColor(COLOR_GREEN);
+  } else if (incomingByte == 'r') {
+      displayColor(COLOR_RED);
+  } else if (incomingByte == 'y') {
+      displayColor(COLOR_YELLOW);
+  } else {
+      Serial.write("Incoming byte : " + incomingByte);
+  }
 }
 
 void displayColor(byte color) {
