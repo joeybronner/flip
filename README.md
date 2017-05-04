@@ -6,11 +6,9 @@
 
 <img src="resources/status.png" />
 
-### List of applications detected
+## Material / Stuffs
 
-## Arduino board
-
-[Installation procedure for Digispark (drivers, arduino ide, etc...)](http://www.instructables.com/id/Digispark-DIY-The-smallest-USB-Arduino/step3/Installing-Digispark-USB-driver/)
+ - Arduino Nano
 
 ## Desktop/Laptop app
 
@@ -62,3 +60,12 @@ Open a terminal
  - [Pywin32 Download](https://sourceforge.net/projects/pywin32/files/pywin32/Build216/)
  - [Pywin32 Documentation](http://docs.activestate.com/activepython/3.2/pywin32/win32gui.html)
  - [RGB LED commands (french article)](https://www.carnetdumaker.net/articles/utiliser-des-leds-rgb-avec-une-carte-arduino-genuino/)
+ - [Github project: Busylight for Skype for Business](https://github.com/stdevel/ArduinoBusylight)
+
+### Names
+
+ - HeywhatSAP
+ - Busylight
+ - Zufrieden
+ - Ruhig
+ - 
