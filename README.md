@@ -1,4 +1,4 @@
-# heywhatSAP
+# flip
 
 *Switch on a RGB LED (e.g. Slack=Green ; SublimeText=Red ; Word=Orange) following...*  
  *- option1, the current user window*  
@@ -9,9 +9,10 @@
 
 ### ToDo List
 
-[] Find a name for the project  
-[] Design a box the Arduino Nano + LED case   
-[] Find a way to get the Skype status  
+[X] Find a name for the project  
+[X] Find a way to get the Skype status  
+[] Design a box the Arduino Nano + LED case
+[] Typo for "flip" name     
 
 #### Electronics
 
@@ -22,11 +23,4 @@
 
  - [Box for Arduino Nano](http://www.thingiverse.com/thing:131894)
  - Avatar of something else in which we can put the LED
-
-#### Project Name
-
- - HeywhatSAP
- - Busylight
- - Zufrieden
- - Ruhig
 
