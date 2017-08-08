@@ -1,13 +1,8 @@
 #!/usr/bin/python
-import time, serial, sys, paho.mqtt.client as mqtt
+import time, sys, paho.mqtt.client as mqtt
 from AppKit import NSWorkspace
 
-#try:
-#	ser = serial.Serial("COM12",timeout=1)
-#	print(ser)
-#except:
-#	print "No device found, please connect the device to your USB"
-#	sys.exit()
+# Here, get device configuration from HTTP API
 
 mqttc = mqtt.Client("flip-joey")
 mqttc.username_pw_set("flip-joey", "helloworld")
@@ -17,7 +12,13 @@ mqttc.loop_start()
 def getCurrentWindow():
 	activeAppName = NSWorkspace.sharedWorkspace().activeApplication()['NSApplicationName']
 	print activeAppName
-	mqttc.publish("flip/devices/1/status","g")
+	if activeAppName == "Google Chrome":
+		mqttc.publish("flip/devices/1/status","g")
+	if activeAppName == 'Sublime Text':
+		mqttc.publish("flip/devices/1/status","r")
+	if activeAppName == 'Arduino':
+		mqttc.publish("flip/devices/1/status","y")
+	
 	time.sleep(1)
 
 while True:

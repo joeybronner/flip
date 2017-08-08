@@ -7,6 +7,8 @@
 
 <img src="resources/status.png" />  
 
+### Application information
+
 ### Install
 
 ...
@@ -19,23 +21,33 @@ First install dependencies
 
 	sudo easy_install pip
 	sudo pip install paho-mqtt
-	sudo pip install pyserial
 
 Now, run the script 
 
 	python run.py
 
-### Electronics
+### Physical device
 
- - 1x Arduino Nano
+ - 1x Nodemcu
  - 1x LED RGB
+ - 1x Push button
+ - 1x Micro USB power supply
 
 ### 3D Printing
 
- - [Box for Arduino Nano](http://www.thingiverse.com/thing:131894)
- - Avatar of something else in which we can put the LED
+ - [Box for Nodemcu](https://www.thingiverse.com/thing:1128026)
 
- ### Useful links
+### Useful links
 
  - [Github | MQTT-ESP8266-CLOUDMQTT.COM/example.ino](https://github.com/Protoneer/MQTT-ESP8266-CLOUDMQTT.COM/blob/master/example.ino)
+
+
+### Todo
+
+- Buy caoutchouc for stripes
+- 
+
+### How to use it?
+
+###### Step 1
 
