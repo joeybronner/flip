@@ -40,8 +40,8 @@ boolean buttonActive = false;
 boolean longPressActive = false;
 
 // WiFi credentials
-char ssid[] = "freejorge";
-char pass[] = "flandre2013";
+char ssid[] = "SAP-Guest";
+char pass[] = "";
 
 // Mode
 bool autoMode = true;
