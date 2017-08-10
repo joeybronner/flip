@@ -35,7 +35,7 @@ const int PIN_LED_B = D3;
 // Button
 const int PIN_PUSH_BT = D4;
 long buttonTimer = 0;
-long longPressTime = 250;
+long longPressTime = 2000;
 boolean buttonActive = false;
 boolean longPressActive = false;
 
@@ -83,31 +83,13 @@ void loop() {
             Serial.println("WiFi connected");
         }
     }
-    /*if (Serial.available() > 0) {
-        incomingByte = Serial.read();
-        if (incomingByte == 'g') {
-            displayColor(COLOR_GREEN);
-        } else if (incomingByte == 'r') {
-            displayColor(COLOR_RED);
-        } else if (incomingByte == 'y') {
-            displayColor(COLOR_YELLOW);
-        } else {
-            Serial.write("Incoming byte : " + incomingByte);
-        }
-    }*/
-    /*if (digitalRead(PIN_PUSH_BT) == HIGH) {
-        if (buttonActive == false) {
-            buttonActive = true;
-            buttonTimer = millis();
-        }
-        if ((millis() - buttonTimer > longPressTime) && (longPressActive == false)) {
-            longPressActive = true;
-            autoMode = !autoMode;
-            waitingMode();
-        } else {
-            switchColorManual();
-        }
-    }*/
+    
+    if (digitalRead(PIN_PUSH_BT) == HIGH) {
+        Serial.println("Button pressed");
+        switchColorManual();
+        delay(200);
+    }
+    
     if (!client.connected()) {
         Serial.println("Connecting to MQTT server");
         if (client.connect(MQTT::Connect("arduinoClient2").set_auth(mqtt_user, mqtt_pass))) {
@@ -167,8 +149,8 @@ void switchColorManual() {
         manuelStatus = "g";
     } else if (manuelStatus == "g") {
         displayColor(COLOR_GREEN);
-        manuelStatus = "b";
-    } else if (manuelStatus == "b") {
+        manuelStatus = "r";
+    }/* else if (manuelStatus == "b") {
         displayColor(COLOR_BLUE);
         manuelStatus = "m";
     } else if (manuelStatus == "m") {
@@ -183,7 +165,7 @@ void switchColorManual() {
     } else if (manuelStatus == "w") {
         displayColor(COLOR_WHITE);
         manuelStatus = "r";
-    }
+    }*/
 }
 
 void switchColor(String c) {
@@ -218,21 +200,4 @@ void blinkColor(int t, byte color) {
       displayColor(COLOR_BLACK);
       delay(250);
    }
-}
-
-void waitingMode() {
-    displayColor(COLOR_RED);
-    delay(200);
-    displayColor(COLOR_GREEN);
-    delay(200);
-    displayColor(COLOR_BLUE);
-    delay(200);
-    displayColor(COLOR_MAGENTA);
-    delay(200);
-    displayColor(COLOR_CYAN);
-    delay(200);
-    displayColor(COLOR_YELLOW);
-    delay(200);
-    displayColor(COLOR_WHITE);
-    delay(200);
 }
