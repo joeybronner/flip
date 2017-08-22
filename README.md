@@ -36,16 +36,8 @@ Now, run the script
 ### Connections
 
 ##### RGB LED & Node MCU
- __  
-(__)  
-||||  
- |  
-rygb  
-  
-r = red  
-y = yellow  
-g = green  
-b = blue  
+
+*here, add photo*  
 
 ### 3D Printing
 
