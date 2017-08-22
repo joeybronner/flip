@@ -33,6 +33,20 @@ Now, run the script
  - 1x Push button
  - 1x Micro USB power supply
 
+### Connections
+
+##### RGB LED & Node MCU
+ __
+(__)
+||||
+ |
+rygb
+
+r = red  
+y = yellow  
+g = green  
+b = blue  
+
 ### 3D Printing
 
  - [Box for Nodemcu](https://www.thingiverse.com/thing:1128026)
