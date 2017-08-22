@@ -36,12 +36,12 @@ Now, run the script
 ### Connections
 
 ##### RGB LED & Node MCU
- __
-(__)
-||||
- |
-rygb
-
+ __  
+(__)  
+||||  
+ |  
+rygb  
+  
 r = red  
 y = yellow  
 g = green  
