@@ -44,9 +44,11 @@ Now, run the script
 
 <img src="resources/connnections.png" />  
 
-##### RGB LED & Node MCU
+##### Experimentation
 
-*here, add photo*  
+*experimentation...*
+
+<img src="resources/IMG_-bua7av.jpg" />  
 
 ### 3D Printing
 
