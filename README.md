@@ -5,13 +5,20 @@
  *- option2, the skype status (away, busy, available, in a meeting, presenting...)*  
  *- option3, manually with a physical button*  
 
-<img src="resources/status.png" />  
+<img src="flip_preview.gif" />  
 
 ### Application information
 
 ### Install
 
-...
+ - Order all the things *(Wemos, stripes, button, RGB led, ...)* 
+ - Print 3D models (globe & boxes)
+ - Put the whole together
+ - Connect the Wemos using a micro USB cable to your laptop
+ - Upload the .ino code *(adapt with your WiFi credentials)*
+ - Unplug from your laptop and connnect somewhere visible on top of your office 
+ - Launch the program on your laptop *(it will create an MQTT connection and send data to the wemos)*
+ - Enjoy
 
 ### Launch
 
@@ -28,7 +35,7 @@ Now, run the script
 
 ### Physical device
 
- - 1x Nodemcu
+ - 1x Wemos
  - 1x LED RGB
  - 1x Push button
  - 1x Micro USB power supply
@@ -47,13 +54,6 @@ Now, run the script
 
  - [Github | MQTT-ESP8266-CLOUDMQTT.COM/example.ino](https://github.com/Protoneer/MQTT-ESP8266-CLOUDMQTT.COM/blob/master/example.ino)
 
+### Licence 
 
-### Todo
-
-- Buy caoutchouc for stripes
-- 
-
-### How to use it?
-
-###### Step 1
-
+MIT © <a href="http://joeybronner.fr">Joey Bronner</a>
