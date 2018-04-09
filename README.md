@@ -5,7 +5,7 @@
  *- option2, the skype status (away, busy, available, in a meeting, presenting...)*  
  *- option3, manually with a physical button*  
 
-<img src="flip_preview.gif" />  
+<img src="resources/flip_preview_.gif" style="width:100%;" />  
 
 ### Application information
 
@@ -20,9 +20,9 @@
  - Launch the program on your laptop *(it will create an MQTT connection and send data to the wemos)*
  - Enjoy
 
-### Launch
+## Launch
 
-## OSX
+### OSX
 
 First install dependencies 
 
@@ -42,6 +42,8 @@ Now, run the script
 
 ### Connections
 
+<img src="resources/connnections.png" />  
+
 ##### RGB LED & Node MCU
 
 *here, add photo*  
@@ -54,6 +56,6 @@ Now, run the script
 
  - [Github | MQTT-ESP8266-CLOUDMQTT.COM/example.ino](https://github.com/Protoneer/MQTT-ESP8266-CLOUDMQTT.COM/blob/master/example.ino)
 
-### Licence 
+## Licence 
 
 MIT © <a href="http://joeybronner.fr">Joey Bronner</a>
