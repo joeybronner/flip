@@ -3,6 +3,7 @@
 #include <ESP8266WiFi.h>
 #include <WiFiClientSecure.h>
 #include <BlynkSimpleEsp8266.h>
+#include <Adafruit_NeoPixel.h>
 
 // TODO
 
@@ -17,10 +18,10 @@ const int mqtt_port = 12358;
 const char *mqtt_user = "joey";
 const char *mqtt_pass = "password";
 
-// Pins RGB LED
-const int PIN_LED_R = D5; // TODO: ADAPT
-const int PIN_LED_G = D7; // TODO: ADAPT
-const int PIN_LED_B = D6; // TODO: ADAPT
+// RGB LED
+#define PIN_LED D2
+#define NUMPIXELS 1
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(1, PIN_LED, NEO_GRB + NEO_KHZ800);
 
 // Button
 const int PIN_PUSH_BT = D4; // TODO: ADAPT
@@ -61,9 +62,7 @@ void setup() {
     initWiFiConnection();
 
     // Initialize the LED pins as outputs
-    pinMode(PIN_LED_R, OUTPUT);
-    pinMode(PIN_LED_G, OUTPUT);
-    pinMode(PIN_LED_B, OUTPUT);
+    pixels.begin();
 
     //pinMode(PIN_PUSH_BT, INPUT);
 
@@ -187,14 +186,9 @@ void switchColor(String c) {
 }
 
 void displayColor(int red, int green, int blue) {
-  #ifdef COMMON_ANODE
-    red = 255 - red;
-    green = 255 - green;
-    blue = 255 - blue;
-  #endif
-  analogWrite(PIN_LED_R, red);
-  analogWrite(PIN_LED_G, green);
-  analogWrite(PIN_LED_B, blue);  
+  pixels.setPixelColor(NUMPIXELS, pixels.Color(red,green,blue));
+  pixels.show();
+  delay(20);  
 }
 
 void blinkColor(int t, String c) {
