@@ -19,9 +19,9 @@ const char *mqtt_user = "joey";
 const char *mqtt_pass = "password";
 
 // RGB LED
-#define PIN_LED D2
+#define PIN D2
 #define NUMPIXELS 1
-Adafruit_NeoPixel pixels = Adafruit_NeoPixel(1, PIN_LED, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(1, PIN, NEO_GRB + NEO_KHZ800);
 
 // Button
 const int PIN_PUSH_BT = D4; // TODO: ADAPT
@@ -58,34 +58,31 @@ void setup() {
     Serial.println("");
     Serial.println("Wemos Started");
 
+    // Switch on LED blue while connnecting to the WiFi
+    pixels.begin();
+    delay(100);
+    switchColor("b");
+    delay(100);
+
     // WiFi before launch
     initWiFiConnection();
 
-    // Initialize the LED pins as outputs
-    pixels.begin();
-
     //pinMode(PIN_PUSH_BT, INPUT);
-
-    delay(100);
-    switchColor("g");
-    delay(3000);
-    switchColor("m");
-    delay(3000);
 
     // Setup a function to be called every second
     timer.setInterval(30000L, checkConnection);
 }
- 
+
 void loop() {
 
     timer.run();
-    
+
     /*if (digitalRead(PIN_PUSH_BT) == HIGH) {
         Serial.println("Button pressed");
         switchColorManual();
         delay(200);
     }*/
-    
+
     if (!client.connected() && WiFi.status() == WL_CONNECTED) {
         Serial.println("Connecting to MQTT server");
         if (client.connect(MQTT::Connect("arduinoClient2").set_auth(mqtt_user, mqtt_pass))) {
@@ -95,7 +92,7 @@ void loop() {
             client.subscribe(top);
             Serial.println("Subscribed on " + top);
         } else {
-            Serial.println("Could not connect to MQTT server");   
+            Serial.println("Could not connect to MQTT server");
         }
     }
 
@@ -167,7 +164,7 @@ void switchColorManual() {
 }
 
 void switchColor(String c) {
-    if (c == "r") 
+    if (c == "r")
           displayColor(255, 0, 0);
     if (c == "g")
           displayColor(0, 255, 0);
@@ -186,9 +183,9 @@ void switchColor(String c) {
 }
 
 void displayColor(int red, int green, int blue) {
-  pixels.setPixelColor(NUMPIXELS, pixels.Color(red,green,blue));
+  pixels.setPixelColor(0, pixels.Color(red,green,blue));
   pixels.show();
-  delay(20);  
+  delay(2000);
 }
 
 void blinkColor(int t, String c) {
@@ -278,4 +275,5 @@ void initWiFiConnection () {
   delay(150);
   Serial.println(F("WiFi connected, your IP address is "));
   Serial.println(WiFi.localIP());
+  switchColor("o");
 }

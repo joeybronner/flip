@@ -5,7 +5,7 @@
  *- option2, the skype status (away, busy, available, in a meeting, presenting...)*  
  *- option3, manually with a physical button*  
 
-<img src="resources/flip_preview_.gif" style="width:100%;" />  
+<img src="resources/preview.gif" style="width:100%;" />  
 
 ### Application information
 
@@ -26,8 +26,8 @@
 
 First install dependencies 
 
-	sudo easy_install pip
-	sudo pip install paho-mqtt
+	sudo easy_install pip *(or sudo -E easy_install pip if you are behind a proxy)*
+	sudo pip install paho-mqtt *(or sudo pip --proxy http://proxy:8080 install paho-mqtt)*
 
 Now, run the script 
 
