@@ -4,10 +4,10 @@ from AppKit import NSWorkspace
 
 # Here, get device configuration from HTTP API
 
-mqttc = mqtt.Client("flip-joey")
-mqttc.username_pw_set("flip-joey", "helloworld")
-mqttc.connect("m10.cloudmqtt.com", 17316, 60)
-mqttc.loop_start()    
+mqttc = mqtt.Client("flip-mac-joey")
+mqttc.username_pw_set("joey", "password")
+mqttc.connect("m23.cloudmqtt.com", 12358, 60)
+mqttc.loop_start()
 
 def getCurrentWindow():
 	activeAppName = NSWorkspace.sharedWorkspace().activeApplication()['NSApplicationName']
@@ -18,7 +18,9 @@ def getCurrentWindow():
 		mqttc.publish("flip/devices/1/status","r")
 	if activeAppName == 'Arduino':
 		mqttc.publish("flip/devices/1/status","y")
-	
+	if activeAppName == 'iTerm2':
+		mqttc.publish("flip/devices/1/status","o")
+
 	time.sleep(1)
 
 while True:
